@@ -27,7 +27,7 @@ function verifyEmotion()
             beforeSend: function(xhrObj)
             {
                 xhrObj.setRequestHeader("Content-Type","application/octet-stream");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","f643f83b07eb44ceb085ebb49e788b72");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","f643f83b07eb44ceb085ebb49e788b72"); //Hey, this is my API key for the live demo only, be nice and use your own!
             },
             processData: false,
             type: "POST",
