@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Emojic Mirror</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div id="my-camera"></div>
+        <div id="emotion"></div>
+
+        <div id="bars">
+            <div id="anger" class="bar">Anger</div>
+            <div id="contempt" class="bar">Contempt</div>
+            <div id="disgust" class="bar">Disgust</div>
+            <div id="fear" class="bar">Fear</div>
+            <div id="happiness" class="bar">Happiness</div>
+            <div id="neutral" class="bar">Neutral</div>
+            <div id="sadness" class="bar">Sadness</div>
+            <div id="surprise" class="bar">Surprise</div>
+        </div>
+
+        <video autoplay loop id="video-neutral" class="video-background" muted plays-inline>
+            <source src="video/neutral.mp4">
+        </video>
+
+        <video autoplay loop id="video-anger" class="video-background" muted plays-inline>
+            <source src="video/anger.mp4">
+        </video>
+
+        <video autoplay loop id="video-happiness" class="video-background" muted plays-inline>
+            <source src="video/happiness.mp4">
+        </video>
+
+        <video autoplay loop id="video-surprise" class="video-background" muted plays-inline>
+            <source src="video/surprise.mp4">
+        </video>
+
+        <script src="js/webcam.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
