@@ -23,7 +23,7 @@ function verifyEmotion()
     Webcam.snap(function(data_uri)
     {
         $.ajax({
-            url: "https://emojic-mirror.cognitiveservices.azure.com/face/v1.0",
+            url: "https://emojic-mirror.cognitiveservices.azure.com/face/v1.0/detect?returnFaceAttributes=emotion",
             beforeSend: function(xhrObj)
             {
                 xhrObj.setRequestHeader("Content-Type","application/octet-stream");
@@ -39,6 +39,7 @@ function verifyEmotion()
             $("#emotion").html("");
             if (data[0])
             {
+            	console.log(data);
                 var angerSum = 0;
                 var contemptSum = 0;
                 var disgustSum = 0;
@@ -50,14 +51,14 @@ function verifyEmotion()
                 
                 data.forEach(function(person)
                 {
-                    var anger = Math.round(person.scores.anger * 100) / 100;
-                    var contempt = Math.round(person.scores.contempt * 100) / 100;
-                    var disgust = Math.round(person.scores.disgust * 100) / 100;
-                    var fear = Math.round(person.scores.fear * 100) / 100;
-                    var happiness = Math.round(person.scores.happiness * 100) / 100;
-                    var neutral = Math.round(person.scores.neutral * 100) / 100;
-                    var sadness = Math.round(person.scores.sadness * 100) / 100;
-                    var surprise = Math.round(person.scores.surprise * 100) / 100;
+                    var anger = Math.round(person.faceAttributes.emotion.anger * 100) / 100;
+                    var contempt = Math.round(person.faceAttributes.emotion.contempt * 100) / 100;
+                    var disgust = Math.round(person.faceAttributes.emotion.disgust * 100) / 100;
+                    var fear = Math.round(person.faceAttributes.emotion.fear * 100) / 100;
+                    var happiness = Math.round(person.faceAttributes.emotion.happiness * 100) / 100;
+                    var neutral = Math.round(person.faceAttributes.emotion.neutral * 100) / 100;
+                    var sadness = Math.round(person.faceAttributes.emotion.sadness * 100) / 100;
+                    var surprise = Math.round(person.faceAttributes.emotion.surprise * 100) / 100;
                     
                     angerSum = anger + angerSum;
                     contemptSum = contempt + contemptSum;
