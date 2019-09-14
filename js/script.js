@@ -23,11 +23,11 @@ function verifyEmotion()
     Webcam.snap(function(data_uri)
     {
         $.ajax({
-            url: "https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize",
+            url: "https://emojic-mirror.cognitiveservices.azure.com/face/v1.0",
             beforeSend: function(xhrObj)
             {
                 xhrObj.setRequestHeader("Content-Type","application/octet-stream");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","f643f83b07eb44ceb085ebb49e788b72"); //Hey, this is my API key for the live demo only, be nice and use your own!
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","368f756a9f274d15a80bdab20d79513c"); //Hey, this is my API key for the live demo only, be nice and use your own!
             },
             processData: false,
             type: "POST",
