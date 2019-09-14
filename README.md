@@ -6,10 +6,14 @@ The Emojic Mirror is an interactive digital artefact that explores the use of em
 
 Setting up Emojic Mirror is simple:
 
-1. First, go grab a [Microsoft Cognitive Services Emotion API key](https://azure.microsoft.com/en-us/services/cognitive-services/emotion/)
-2. Then, edit the following line in `js/script.js` with your new API key:
+1. First, go grab a [Microsoft Cognitive Services Face API endpoint & key](https://azure.microsoft.com/en-us/services/cognitive-services/face/)
+2. Then, edit the following lines in `js/script.js` with your new API endpoint and key:
 
 ```
+url: "https://<YOUR CUSTOM API URL HERE!>.cognitiveservices.azure.com/face/v1.0/detect?returnFaceAttributes=emotion",
+
+...
+
 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","YOUR-API-KEY-HERE!");
 ```
 
